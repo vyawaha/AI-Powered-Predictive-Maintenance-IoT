@@ -9,7 +9,7 @@ def preprocess_data(df):
     df['temp_vib'] = df['temperature'] * df['vibration']
     df['power_load'] = df['current'] * df['temperature']
 
-    X = df[['temperature', 'vibration', 'current', 'temp_vib', 'power_load']]
+    X = df[['temperature', 'vibration', 'current', 0, 0]]
     y = df['failure']
 
     scaler = StandardScaler()
