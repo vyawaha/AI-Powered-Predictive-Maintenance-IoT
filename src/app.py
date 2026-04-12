@@ -34,7 +34,7 @@ if not os.path.exists("outputs"):
     os.makedirs("outputs")
 
 if not os.path.exists(output_file):
-    pd.DataFrame(columns=["temperature", "vibration", "current", "prediction"]).to_csv(output_file, index=False)
+    pd.DataFrame(columns=["temperature", "vibration", "current", "pressure", "rpm", "prediction"]).to_csv(output_file, index=False)
 
 # ===============================
 # SENSOR SIMULATION
@@ -43,18 +43,20 @@ def generate_sensor_data():
     temperature = np.random.normal(65, 10)
     vibration = np.random.normal(5, 2)
     current = np.random.normal(10, 3)
-    return temperature, vibration, current
+    pressure = np.random.normal(78,20)
+    rpm = rpm.random.normal(4,8)
+    return temperature, vibration, current, pressure, rpm
 
 # ===============================
 # PREDICTION
 # ===============================
-def predict(temp, vib, curr):
+def predict(temp, vib, curr,pre,rpm):
     if model:
-        result = model.predict([[temp, vib, curr]])[0]
+        result = model.predict([[temp, vib, curr, pre, rpm]])[0]
         return "FAILURE" if result == 1 else "NORMAL"
     else:
         # fallback logic
-        if temp > 80 or vib > 8 or curr > 15:
+        if temp > 80 or vib > 8 or curr > 15 or pre > 80 or rpm > 8:
             return "FAILURE"
         return "NORMAL"
 
@@ -63,17 +65,20 @@ def predict(temp, vib, curr):
 # ===============================
 if st.button("🔄 Generate Sensor Reading & Predict"):
 
-    temp, vib, curr = generate_sensor_data()
-    prediction = predict(temp, vib, curr)
+    temp, vib, curr, pre, rpm = generate_sensor_data()
+    prediction = predict(temp, vib, curr, pre, rpm)
+    prediction="prediction"
 
     # ===============================
     # SHOW METRICS
     # ===============================
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     col1.metric("🌡 Temperature", f"{temp:.2f}")
     col2.metric("📳 Vibration", f"{vib:.2f}")
     col3.metric("⚡ Current", f"{curr:.2f}")
+    col4.metric(" Pressure", f"{pre:.2f}")
+    col5.metric(" Rpm", f"{pre:.2f}")
 
     # ===============================
     # ALERT SYSTEM
@@ -90,7 +95,9 @@ if st.button("🔄 Generate Sensor Reading & Predict"):
         "temperature": temp,
         "vibration": vib,
         "current": curr,
-        "prediction": prediction
+        "pressure": pre,
+        "rpm": rpm
+        
     }])
 
     df = pd.read_csv(output_file)
@@ -113,6 +120,8 @@ if st.button("🔄 Generate Sensor Reading & Predict"):
         ax.plot(df["temperature"], label="Temperature")
         ax.plot(df["vibration"], label="Vibration")
         ax.plot(df["current"], label="Current")
+        ax.plot(df["pressure"], label="Pressure")
+        ax.plot(df["rpm"], label="rpm")
 
         ax.legend()
         st.pyplot(fig)
