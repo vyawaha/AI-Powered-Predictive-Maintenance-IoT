@@ -40,11 +40,11 @@ if not os.path.exists(output_file):
 # SENSOR SIMULATION
 # ===============================
 def generate_sensor_data():
-    temperature = np.random.normal(65, 10)
-    vibration = np.random.normal(5, 2)
-    current = np.random.normal(10, 3)
-    pressure = np.random.normal(78,20)
-    rpm = rpm.random.normal(4,8)
+    temperature = np.random.normal(70, 5)
+    vibration = np.random.normal(3, 1)
+    current = np.random.normal(8, 2)
+    pressure = np.random.normal(2 ,0.5)
+    rpm = np.random.normal(4, 8)
     return temperature, vibration, current, pressure, rpm
 
 # ===============================
@@ -56,7 +56,7 @@ def predict(temp, vib, curr,pre,rpm):
         return "FAILURE" if result == 1 else "NORMAL"
     else:
         # fallback logic
-        if temp > 80 or vib > 8 or curr > 15 or pre > 80 or rpm > 8:
+        if temp > 80 or vib > 8 or curr > 15 or pre > 10 or rpm > 8:
             return "FAILURE"
         return "NORMAL"
 
