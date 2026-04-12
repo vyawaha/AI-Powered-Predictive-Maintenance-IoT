@@ -73,4 +73,13 @@ Target:
 ---
 
 ## 🏗️ Project Structure
+## 📸 Screenshots
 
+### Dashboard
+![Dashboard](src/images/dashboard.png)
+
+### Prediction
+![Prediction](src/images/prediction.png)
+
+### Graph
+![Graph](src/images/graph.png)
