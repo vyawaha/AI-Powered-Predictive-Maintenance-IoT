@@ -76,10 +76,10 @@ Target:
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](src/images/dashboard.png)
+![Dashboard](./src/images/dashboard.png)
 
-### Prediction
-![Prediction](src/images/prediction.png)
+### Prediction Result
+![Prediction](./src/images/prediction.png)
 
-### Graph
-![Graph](src/images/graph.png)
+### Sensor Graph
+![Graph](./src/images/graph.png)
