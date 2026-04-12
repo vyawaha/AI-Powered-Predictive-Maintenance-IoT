@@ -1,5 +1,5 @@
 from src.data_loader import load_data
-from src.preprocess import preprocess_data
+from src.data_preprocessing import preprocess_data
 from src.train_model import train_model
 from src.visualize import plot_results
 import pandas as pd
