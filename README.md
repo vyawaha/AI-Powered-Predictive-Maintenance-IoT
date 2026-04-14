@@ -94,6 +94,11 @@ Simulated IoT sensor dataset:
 ✔ End-to-end pipeline  
 
 ---
+## 📸 Output Screenshots
+
+![Dashboard](images/dashboard.png)
+
+---
 
 ## 🖥️ How to Run
 
