@@ -1,87 +1,128 @@
-# 🚀 AI-Powered Predictive Maintenance for IoT Devices
+# 🔧 AI-Powered Predictive Maintenance System for IoT Devices
 
-## 📌 Overview
-This project is an **AI-powered predictive maintenance system** that uses machine learning to predict machine failures using simulated IoT sensor data.
-
-It helps industries **detect failures before they occur**, reducing downtime and maintenance costs.
-
----
-
-## 🎯 Problem Statement
-Traditional maintenance is reactive — machines are repaired only after failure.
-
-This leads to:
-- ❌ Unexpected downtime  
-- ❌ High maintenance cost  
-- ❌ Reduced efficiency  
-
-👉 This project solves it using **predictive analytics + IoT simulation**
+![GitHub repo size](https://img.shields.io/badge/Repo-Optimized-blue)
+![ML Model](https://img.shields.io/badge/Model-RandomForest-success)
+![Deployment](https://img.shields.io/badge/API-Flask-orange)
+![UI](https://img.shields.io/badge/UI-Streamlit-red)
 
 ---
 
-## 🏭 Industry Relevance
-Used in:
-- Manufacturing Plants  
-- Power Plants  
-- Automotive Industry  
-- Aviation Industry  
+## 🚀 Overview
+An end-to-end AI system that predicts machine failures using IoT sensor data with real-time API and interactive dashboard visualization.
 
-Companies like:
-- Siemens  
-- General Electric (GE)  
-- Bosch  
-- IBM  
+---
 
-use similar systems for smart maintenance.
+## 🌍 Real-World Applications
+- Manufacturing Industry
+- Automotive Systems
+- Aviation Maintenance
+- Power Plants
+- Industrial IoT Monitoring
+
+---
+
+## 🎯 Objective
+Predict machine health using sensor data:
+- Temperature 🌡️  
+- Vibration 📳  
+- Current ⚡  
+
+Outputs:
+- Normal Operation ✅  
+- Failure Risk ⚠️  
+
+---
+
+## 🧠 Problem Statement
+Machines fail unexpectedly causing:
+- High maintenance cost
+- Downtime
+- Safety risks
+
+This system helps predict failures in advance using AI.
+
+---
+
+## 🏗️ System Architecture
+
+IoT Sensor Data
+↓
+Data Preprocessing
+↓
+Machine Learning Model (Random Forest)
+↓
+Flask API (Backend)
+↓
+Streamlit Dashboard (Frontend)
+↓
+Prediction Output
 
 ---
 
 ## ⚙️ Tech Stack
-
-- **Programming:** Python  
-- **Libraries:** Pandas, NumPy, Scikit-learn  
-- **Visualization:** Matplotlib, Seaborn  
-- **Model:** Random Forest Classifier  
-- **Frontend:** Streamlit  
-- **Version Control:** Git & GitHub  
+- Python 🐍  
+- Pandas, NumPy  
+- Scikit-learn  
+- Flask  
+- Streamlit  
+- Matplotlib  
 
 ---
 
 ## 📊 Dataset
-
-This project uses **simulated IoT sensor data**:
-
-- 🌡 Temperature  
-- 📳 Vibration  
-- ⚡ Current  
-
-Target:
-- `0` → Normal  
-- `1` → Machine Failure  
+Simulated IoT sensor dataset:
+- temperature
+- vibration
+- current
+- failure label
 
 ---
 
-## 🧠 Project Workflow
-
-1. Data Collection (Simulated IoT Sensors)
-2. Data Preprocessing
-3. Feature Engineering
-4. Model Training
-5. Failure Prediction
-6. Visualization Dashboard (Streamlit)
+## 🤖 Machine Learning Model
+- Random Forest Classifier
+- Binary Classification:
+  - 0 → Normal
+  - 1 → Failure
 
 ---
 
-## 🏗️ Project Structure
+## 🚀 Features
+✔ Real-time prediction API  
+✔ Interactive dashboard  
+✔ IoT simulation  
+✔ ML-based failure detection  
+✔ End-to-end pipeline  
 
-## 📸 Screenshots
+---
 
-### Dashboard
-![Dashboard](src/images/dashboard.png)
+## 🖥️ How to Run
 
-### Prediction Result
-![Prediction](src/images/prediction.png)
+### 1. Install dependencies
+```bash
+pip install -r requirements.txt
 
-### Sensor Graph
-![Graph](src/images/graph.png)
- 
+2. Train model
+python train.py
+3. Run backend API
+python app.py
+4. Run dashboard
+streamlit run dashboard.py
+📁 Project Structure
+AI-Predictive-Maintenance/
+│
+├── data/
+├── models/
+├── src/
+├── app.py
+├── train.py
+├── dashboard.py
+├── requirements.txt
+├── README.md
+📌 Project Note
+⚠️ Large datasets and trained models are excluded using .gitignore to keep the repository lightweight and reproducible.
+
+🙏 Credits
+Special thanks to Umesh Yadav Sir for guidance and mentorship.
+
+👨‍💻 Author
+Muktai Vyawahare
